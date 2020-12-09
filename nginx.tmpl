@@ -1,0 +1,24 @@
+events {}
+
+http {
+
+   upstream websocket {
+      server 127.0.0.1:8085;
+   }
+   server {
+      listen 8185;
+      location / {
+        sub_filter '<html>'  '<html style="background-image: linear-gradient(to right, #ddd, #999);">';
+        sub_filter '<head>'  '<head><link rel="icon" href="${FAVICON_URL}">';
+        sub_filter '<title>broadway 2.0</title>'  '<title>${APP_TITLE}</title>';
+        sub_filter '</body>' '<img src="${CORNER_IMAGE_URL}" style="position: fixed;width: 256px;height: 256px;/*! z-index: 1000; *//*! display: block; */bottom: 0px;right: 30px;"></body>';
+        
+        proxy_pass http://websocket;
+
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+      }
+   }
+}
+
