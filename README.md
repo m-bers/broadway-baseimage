@@ -9,12 +9,11 @@ broadway: https://developer.gnome.org/gtk3/stable/gtk-broadway.html
 ### Requirements:
 git, docker
 
+
+
 ### Quickstart: 
 
-    git clone https://github.com/m-bers/broadway-baseimage.git
-    cd broadway-baseimage
-    docker build -t broadway-baseimage . 
-    docker run -it -p 8185:8185 broadway-baseimage /bin/bash
+    docker run -it -p 8185:8185 mber5/broadway-baseimage /bin/bash
 
 In the container shell, 
 
@@ -22,12 +21,12 @@ In the container shell,
     apt-get update
     # install GTK3 apps and run them here
     ...
-    
+
 Go to http://localhost:8185 in your browser
 
 ### Building an image:
 
-After building broadway-baseimage with `docker build -t broadway-baseimage .`, create a Dockerfile, entrypoint script, and any other assets you want (like a docker-compose.yml). In your entrypoint script, make sure you first run the baseimage script before your own commands, as in docker-virt-manager:
+Create a Dockerfile, entrypoint script, and any other assets you want (like a docker-compose.yml). In your entrypoint script, make sure you first run the baseimage script before your own commands, as in docker-virt-manager:
 
     #!/bin/bash
     /usr/local/bin/start
