@@ -10,7 +10,7 @@ RUN apt-get clean && apt-get autoclean && rm -rf /var/lib/apt/lists/*
 COPY start.sh /usr/local/bin/start
 COPY nginx.tmpl /etc/nginx/nginx.tmpl
 
-EXPOSE 8185
+EXPOSE 80
 
 # overwrite this with 'CMD []' in a dependent Dockerfile
 CMD ["/usr/local/bin/start"]

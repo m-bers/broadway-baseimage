@@ -6,7 +6,7 @@ http {
       server 127.0.0.1:8085;
    }
    server {
-      listen 8185;
+      listen 80;
       location / {
         sub_filter '<html>'  '<html style="background-image: linear-gradient(to right, #ddd, #999);">';
         sub_filter '<head>'  '<head><link rel="icon" href="${FAVICON_URL}">';

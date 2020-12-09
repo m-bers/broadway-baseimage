@@ -13,7 +13,7 @@ git, docker
 
 ### Quickstart: 
 
-    docker run -it -p 8185:8185 mber5/broadway-baseimage /bin/bash
+    docker run -it -p 8180:80 mber5/broadway-baseimage /bin/bash
 
 In the container shell, 
 
@@ -22,7 +22,7 @@ In the container shell,
     # install GTK3 apps and run them here
     ...
 
-Go to http://localhost:8185 in your browser
+Go to http://localhost:8180 in your browser
 
 ### Building an image:
 
@@ -40,7 +40,6 @@ In your Dockerfile you generally want to do the following:
 * Set branding via environment variables
 * Install some packages
 * Copy your entrypoint script into the container
-* Expose a port (set as 8185 in nginx.tmpl)
 * Run your entrypoint script
 
 Example (from docker-virt-manager):
@@ -60,8 +59,6 @@ Example (from docker-virt-manager):
     RUN echo "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 
     COPY startapp.sh /usr/local/bin/startapp
-
-    EXPOSE 8185
 
     # overwrite this with 'CMD []' in a dependent Dockerfile
     CMD ["/usr/local/bin/startapp"]
