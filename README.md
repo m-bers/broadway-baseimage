@@ -43,7 +43,7 @@ In your Dockerfile you generally want to do the following:
 * Copy your entrypoint script into the container
 * Run your entrypoint script
 
-Example (from docker-virt-manager):
+Example (from [docker-virt-manager](https://github.com/m-bers/docker-virt-manager)):
 
     FROM mber5/broadway-baseimage:latest
 
