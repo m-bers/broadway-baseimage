@@ -1,7 +1,7 @@
 server {
    listen 80;
    location / {
-      sub_filter '<html>'  '<html style="background-image: linear-gradient(to right, #ddd, #999);">';
+      sub_filter '<html>'  '<html style="background-image: linear-gradient(to right, ${BG_GRADIENT});">';
       sub_filter '<head>'  '<head><link rel="icon" href="${FAVICON_URL}">';
       sub_filter '<title>broadway 2.0</title>'  '<title>${APP_TITLE}</title>';
       sub_filter '</body>' '<img src="${CORNER_IMAGE_URL}" style="position: fixed;width: 256px;height: 256px;/*! z-index: 1000; *//*! display: block; */bottom: 0px;right: 30px;"><a target="_blank" href="/ttyd"><img src="/images/terminal-outline.svg" style="position: fixed;width: 64px;height: 64px;/*! z-index: 1000; *//*! display: block; */bottom: 30px;left: 30px;"></a></body>';
