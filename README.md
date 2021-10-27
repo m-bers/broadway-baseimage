@@ -1,7 +1,6 @@
 ![](https://github.com/m-bers/broadway-baseimage/workflows/docker%20build/badge.svg)
 # Broadway docker baseimage
 ## Run GTK3 apps in the browser via docker
-![Broadway baseimage](broadway-baseimage.png)
 
 ### What is it? 
 broadway: https://developer.gnome.org/gtk3/stable/gtk-broadway.html
