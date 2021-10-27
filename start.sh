@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 if [ $DARK_MODE = true ] ; then
-  export BG_GRADIENT="#000, #111"
+  export BG_GRADIENT="#111, #222"
   export GTK_THEME="Materia:dark"
   export TERM_COLOR="filter: invert(14%) sepia(7%) saturate(14%) hue-rotate(16deg) brightness(102%) contrast(90%);"
   cp -r /usr/share/icons/Papirus-Dark /usr/share/icons/Yaru
