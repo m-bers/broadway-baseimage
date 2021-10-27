@@ -4,9 +4,9 @@ if [ $DARK_MODE = true ] ; then
   export BG_GRADIENT="#000, #111"
   export GTK_THEME="Materia:dark"
   export TERM_COLOR="filter: invert(14%) sepia(7%) saturate(14%) hue-rotate(16deg) brightness(102%) contrast(90%);"
-  mv /usr/share/icons/Papirus-Dark /usr/share/icons/Yaru
+  cp -r /usr/share/icons/Papirus-Dark /usr/share/icons/Yaru
 else 
-  mv /usr/share/icons/Papirus /usr/share/icons/Yaru
+  cp -r /usr/share/icons/Papirus /usr/share/icons/Yaru
 fi
 envsubst '$$BG_GRADIENT $$FAVICON_URL $$APP_TITLE $$CORNER_IMAGE_URL $$TERM_COLOR' < /etc/nginx/nginx.tmpl > /etc/nginx/sites-enabled/default && nginx -g 'daemon off;' &
 nohup /usr/bin/broadwayd :5 &> /var/log/broadway.log &
