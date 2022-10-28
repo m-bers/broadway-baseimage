@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:latest
 
 ENV GDK_BACKEND='broadway'
 ENV BROADWAY_DISPLAY=':5'
